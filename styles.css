@@ -1,0 +1,182 @@
+/* Estilos de la página de Dos Pinos */
+:root {
+  --leche: #fbfdff;
+  --azul: #123e8c;
+  --pino: #1f7a4d;
+  --prado: #a9d8a0;
+  --cielo: #cfe8ff;
+  --tinta: #1d2a3a;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Nunito", Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--tinta);
+  background: var(--leche);
+}
+h1,
+h2,
+h3 {
+  font-family: "Fredoka", "Trebuchet MS", sans-serif;
+  color: var(--azul);
+  line-height: 1.15;
+}
+main,
+header,
+footer {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+header {
+  text-align: center;
+  padding-top: 28px;
+}
+h1 {
+  font-size: clamp(3rem, 12vw, 6rem);
+  margin: 0;
+  letter-spacing: -1px;
+}
+.lema {
+  font-size: 1.25rem;
+  margin: 4px auto 18px;
+  color: var(--pino);
+  font-weight: 700;
+}
+.hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 28px 28px 0 0;
+}
+section {
+  padding: 36px 0 8px;
+}
+h2 {
+  font-size: 2rem;
+  margin: 0 0 10px;
+}
+p {
+  max-width: 65ch;
+}
+a {
+  color: var(--azul);
+  font-weight: 700;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--pino);
+  outline-offset: 3px;
+}
+ol.camino {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  border-left: 6px solid var(--prado);
+}
+ol.camino li {
+  padding: 6px 0 14px 22px;
+  position: relative;
+}
+ol.camino li::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--pino);
+  border: 4px solid var(--leche);
+}
+ol.camino strong {
+  font-family: "Fredoka", sans-serif;
+  color: var(--azul);
+  font-size: 1.2rem;
+}
+ul.productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+ul.productos li {
+  background: var(--cielo);
+  color: var(--azul);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+ul.productos li:nth-child(even) {
+  background: var(--prado);
+  color: #0e4a2c;
+}
+.vaso {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  background: var(--cielo);
+  border-radius: 28px;
+  padding: 24px;
+  margin: 24px 0;
+}
+.vaso svg {
+  width: 120px;
+  flex: none;
+}
+#leche {
+  transition:
+    y 0.9s ease,
+    height 0.9s ease;
+}
+button {
+  font:
+    700 1.1rem "Fredoka",
+    sans-serif;
+  background: var(--azul);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 26px;
+  cursor: pointer;
+}
+button:hover {
+  background: #0c2f6b;
+}
+#mensaje {
+  margin: 10px 0 0;
+  font-weight: 700;
+  color: var(--pino);
+  min-height: 1.6em;
+}
+footer {
+  padding: 30px 20px 50px;
+  border-top: 4px dotted var(--prado);
+  margin-top: 30px;
+}
+@media (prefers-reduced-motion: reduce) {
+  #leche {
+    transition: none;
+  }
+}
+
+/* Colores del vaso: el fondo es azul para que la leche blanca se vea */
+.vaso {
+  background: #b9d9f7;
+}
+.vaso-fondo {
+  fill: #7fb0e6;
+}
+.vaso-leche {
+  fill: #fffef8;
+}
+.vaso button:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 3px;
+}

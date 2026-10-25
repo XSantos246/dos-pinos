@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dos Pinos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Dos Pinos</h1>
+    <p class="lema">Productos lacteos</p>
+    <img class="hero" src="pinos.svg" alt="Paisaje de Costa Rica con dos pinos, colinas verdes y vacas">
+  </header>
+
+  <main>
+    <section>
+      <h2>¿En si que es la marca Dos Pinos?</h2>
+      <p>
+        Dos Pinos es una cooperativa de productores de leche de Costa Rica,
+        fundada en 1947 y con sede en Alajuela. Nació cuando varios productores
+        se unieron para vender su leche juntos, y hoy es una de las marcas de
+        alimentos más conocidas del país, también presente en Centroamérica.
+
+        Dato curioso la imagen de Dos pinos hace referencia a los dos árboles de pino que adornaban la entrada de la finca donde se realizó la primera reunión de los fundadores en 1947.
+      </p>
+      <p>
+        Su nombre hace referencia a dos pinos, y esos dos pinos son la
+        imagen de la marca.
+      </p>
+    </section>
+
+    <section>
+      <h2>El camino de un vaso de leche</h2>
+      <ol class="camino">
+        <li><strong>En la finca</strong><br>El productor ordeña a las vacas, que pastan en los potreros del país.</li>
+        <li><strong>En el camino</strong><br>Camiones refrigerados recogen la leche y la llevan a la planta.</li>
+        <li><strong>En la planta</strong><br>Se analiza, se pasteuriza y se envasa, o se convierte en yogurt, queso o helado.</li>
+        <li><strong>En tu mesa</strong><br>Llega a las pulperías, los supermercados y los hogares.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Lo que sale de la leche</h2>
+      <ul class="productos">
+        <li>Leche</li>
+        <li>Yogurt</li>
+        <li>Queso</li>
+        <li>Helados</li>
+        <li>Mantequilla</li>
+        <li>Jugos</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Sírvete un vaso</h2>
+      <div class="vaso">
+        <svg viewBox="0 0 120 160" role="img" aria-label="Vaso de leche">
+          <defs><clipPath id="forma"><path d="M18 12 H102 L92 150 Q91 156 85 156 H35 Q29 156 28 150 Z"/></clipPath></defs>
+          <g clip-path="url(#forma)">
+            <rect class="vaso-fondo" x="0" y="0" width="120" height="160"/>
+            <rect class="vaso-leche" id="leche" x="0" y="156" width="120" height="0"/>
+          </g>
+          <path d="M18 12 H102 L92 150 Q91 156 85 156 H35 Q29 156 28 150 Z" fill="none" stroke="#123e8c" stroke-width="5" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <button id="boton" type="button">Servir leche</button>
+          <p id="mensaje" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Sobre esta página</h2>
+      <p>
+        Basicamente trabajo en la Dos pinos fue lo primero que pense en hacer una pagina basica sobre ello 
+        <strong>me llamo Santos</strong>, estudiante de Ingeniería en Sistemas de
+        la Universidad Nacional de Ingeniería (UNI) Frondend basico para la clase de
+        Diseño de sistemas en Internet.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <h3>Enlaces</h3>
+    <ul>
+      <li><a href="https://www.dospinos.com" target="_blank" rel="noopener">Sitio oficial de Dos Pinos</a></li>
+      <li><a href="https://es.wikipedia.org/wiki/Dos_Pinos" target="_blank" rel="noopener">Dos Pinos en Wikipedia</a></li>
+    </ul>
+    <h6>Página con fines educativos. Dos Pinos es una marca de su cooperativa; esta página no es oficial.</h6>
+  </footer>
+
+  <script>
+    var leche = document.getElementById('leche');
+    var boton = document.getElementById('boton');
+    var mensaje = document.getElementById('mensaje');
+    var lleno = false;
+    boton.addEventListener('click', function () {
+      lleno = !lleno;
+      leche.setAttribute('y', lleno ? 30 : 156);
+      leche.setAttribute('height', lleno ? 126 : 0);
+      boton.textContent = lleno ? 'Tomar un sorbo' : 'Servir leche';
+      mensaje.textContent = lleno ? '' : 'El vaso quedó vacío. ¿Servimos otro?';
+    });
+  </script>
+
+</body>
+</html>
